@@ -1,6 +1,8 @@
 using System.Data;
 using System.Windows.Forms;
 using 社員情報管理システム;
+using System;
+using Npgsql;
 
 namespace 社員情報管理システム
 {
@@ -16,9 +18,9 @@ namespace 社員情報管理システム
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e, EmployeeAddForm employeeAddForm)
         {
-          
+            employeeAddForm.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -27,6 +29,21 @@ namespace 社員情報管理システム
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace 社員情報管理システム
 {
-    partial class EmployeeDeleteForm
+    partial class EmployeeEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -257,7 +257,7 @@ namespace 社員情報管理システム
             label12.TabIndex = 23;
             label12.Text = "EmployeeID";
             // 
-            // EmployeeDeleteForm
+            // EmployeeEditForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -286,8 +286,8 @@ namespace 社員情報管理システム
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "EmployeeDeleteForm";
-            Text = "EmployeeDeleteForm";
+            Name = "EmployeeEditForm";
+            Text = "EmployeeEditForm";
             ResumeLayout(false);
             PerformLayout();
         }

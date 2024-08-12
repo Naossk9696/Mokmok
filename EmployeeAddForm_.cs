@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace 社員情報管理システム
 {
-    public partial class EmployeeAddForm_ : Form
+    public partial class EmployeeAddForm : Form
     {
-        public EmployeeAddForm_()
+        public EmployeeAddForm()
         {
             InitializeComponent();
         }
@@ -21,5 +21,7 @@ namespace 社員情報管理システム
         {
 
         }
+
+    
     }
 }

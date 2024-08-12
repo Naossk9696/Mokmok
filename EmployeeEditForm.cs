@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace 社員情報管理システム
 {
-    public partial class EmployeeDeleteForm : Form
+    public partial class EmployeeEditForm : Form
     {
-        public EmployeeDeleteForm()
+        public EmployeeEditForm()
         {
-            InitializeComponent();
+
+        }
+
+
         }
     }
-}

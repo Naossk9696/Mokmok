@@ -1,6 +1,6 @@
 ﻿namespace 社員情報管理システム
 {
-    partial class EmployeeAddForm_
+    partial class EmployeeAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             label6.Name = "label6";
             label6.Size = new Size(69, 20);
             label6.TabIndex = 9;
-            label6.Text = "携帯番号";
+            label6.Text = "電話番号";
             // 
             // label7
             // 
@@ -254,7 +254,7 @@
             comboBox3.Size = new Size(160, 28);
             comboBox3.TabIndex = 27;
             // 
-            // EmployeeAddForm_
+            // EmployeeAddForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -283,8 +283,8 @@
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "EmployeeAddForm_";
-            Text = "社員情報追加フォーム";
+            Name = "EmployeeAddForm";
+            Text = "社員情報新規登録フォーム";
             ResumeLayout(false);
             PerformLayout();
         }

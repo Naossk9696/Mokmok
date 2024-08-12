@@ -34,19 +34,29 @@
             label1 = new Label();
             label2 = new Label();
             dataGridView1 = new DataGridView();
-            EmployeeID = new DataGridViewTextBoxColumn();
-            FullName = new DataGridViewTextBoxColumn();
-            FullNameKana = new DataGridViewTextBoxColumn();
-            Position = new DataGridViewTextBoxColumn();
+            col_EmployeeID = new DataGridViewTextBoxColumn();
+            col_FullName = new DataGridViewTextBoxColumn();
+            col_FullNameKana = new DataGridViewTextBoxColumn();
+            col_Email = new DataGridViewTextBoxColumn();
+            col_PhoneNumber = new DataGridViewTextBoxColumn();
             Department = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            col_Status = new DataGridViewTextBoxColumn();
             button4 = new Button();
             button5 = new Button();
+            button6 = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(1147, 590);
+            button1.Location = new Point(1095, 692);
             button1.Name = "button1";
             button1.Size = new Size(165, 38);
             button1.TabIndex = 1;
@@ -56,17 +66,17 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1125, 116);
+            button2.Location = new Point(64, 200);
             button2.Name = "button2";
             button2.Size = new Size(165, 41);
             button2.TabIndex = 2;
             button2.Text = "新規登録";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+    
             // 
             // button3
             // 
-            button3.Location = new Point(301, 116);
+            button3.Location = new Point(679, 31);
             button3.Name = "button3";
             button3.Size = new Size(165, 41);
             button3.TabIndex = 20;
@@ -86,51 +96,57 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1239, 29);
+            label2.Location = new Point(1178, 29);
             label2.Name = "label2";
             label2.Size = new Size(51, 20);
             label2.TabIndex = 22;
             label2.Text = "Ver.1.0";
-            label2.Click += label2_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { EmployeeID, FullName, FullNameKana, Position, Department });
-            dataGridView1.Location = new Point(23, 194);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { col_EmployeeID, col_FullName, col_FullNameKana, col_Email, col_PhoneNumber, Department, Position, col_Status });
+            dataGridView1.Location = new Point(28, 301);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1289, 366);
+            dataGridView1.Size = new Size(1232, 366);
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
-            // EmployeeID
+            // col_EmployeeID
             // 
-            EmployeeID.HeaderText = "社員番号";
-            EmployeeID.MinimumWidth = 6;
-            EmployeeID.Name = "EmployeeID";
-            EmployeeID.Width = 125;
+            col_EmployeeID.HeaderText = "社員番号";
+            col_EmployeeID.MinimumWidth = 6;
+            col_EmployeeID.Name = "col_EmployeeID";
+            col_EmployeeID.Width = 125;
             // 
-            // FullName
+            // col_FullName
             // 
-            FullName.HeaderText = "名前";
-            FullName.MinimumWidth = 6;
-            FullName.Name = "FullName";
-            FullName.Width = 125;
+            col_FullName.HeaderText = "名前";
+            col_FullName.MinimumWidth = 6;
+            col_FullName.Name = "col_FullName";
+            col_FullName.Width = 150;
             // 
-            // FullNameKana
+            // col_FullNameKana
             // 
-            FullNameKana.HeaderText = "名前カナ";
-            FullNameKana.MinimumWidth = 6;
-            FullNameKana.Name = "FullNameKana";
-            FullNameKana.Width = 125;
+            col_FullNameKana.HeaderText = "名前カナ";
+            col_FullNameKana.MinimumWidth = 6;
+            col_FullNameKana.Name = "col_FullNameKana";
+            col_FullNameKana.Width = 150;
             // 
-            // Position
+            // col_Email
             // 
-            Position.HeaderText = "役職";
-            Position.MinimumWidth = 6;
-            Position.Name = "Position";
-            Position.Width = 125;
+            col_Email.HeaderText = "メールアドレス";
+            col_Email.MinimumWidth = 6;
+            col_Email.Name = "col_Email";
+            col_Email.Width = 200;
+            // 
+            // col_PhoneNumber
+            // 
+            col_PhoneNumber.HeaderText = "電話番号";
+            col_PhoneNumber.MinimumWidth = 6;
+            col_PhoneNumber.Name = "col_PhoneNumber";
+            col_PhoneNumber.Width = 170;
             // 
             // Department
             // 
@@ -139,40 +155,113 @@
             Department.Name = "Department";
             Department.Width = 125;
             // 
+            // Position
+            // 
+            Position.HeaderText = "役職";
+            Position.MinimumWidth = 6;
+            Position.Name = "Position";
+            Position.Width = 125;
+            // 
+            // col_Status
+            // 
+            col_Status.HeaderText = "在籍状況";
+            col_Status.MinimumWidth = 6;
+            col_Status.Name = "col_Status";
+            col_Status.Width = 125;
+            // 
             // button4
             // 
-            button4.Location = new Point(506, 116);
+            button4.Location = new Point(679, 114);
             button4.Name = "button4";
             button4.Size = new Size(165, 41);
             button4.TabIndex = 24;
             button4.Text = "検索条件リセット";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(23, 116);
+            button5.Location = new Point(64, 117);
             button5.Name = "button5";
             button5.Size = new Size(165, 41);
             button5.TabIndex = 25;
-            button5.Text = "詳細検索";
+            button5.Text = "社員詳細表示";
             button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(9, 31);
+            button6.Name = "button6";
+            button6.Size = new Size(117, 31);
+            button6.TabIndex = 27;
+            button6.Text = "検索条件追加";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(9, 80);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(167, 28);
+            comboBox1.TabIndex = 28;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(9, 114);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(167, 28);
+            comboBox2.TabIndex = 29;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(198, 80);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(431, 28);
+            comboBox3.TabIndex = 30;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(198, 114);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(431, 28);
+            comboBox4.TabIndex = 31;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(comboBox4);
+            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(button6);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Location = new Point(283, 86);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(878, 209);
+            groupBox1.TabIndex = 32;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "検索条件";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1324, 640);
+            ClientSize = new Size(1272, 742);
+            Controls.Add(groupBox1);
             Controls.Add(button5);
-            Controls.Add(button4);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "MainForm";
             Text = "社員情報管理システムメインフォーム";
+            Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,12 +273,21 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn EmployeeID;
-        private DataGridViewTextBoxColumn FullName;
-        private DataGridViewTextBoxColumn FullNameKana;
-        private DataGridViewTextBoxColumn Position;
-        private DataGridViewTextBoxColumn Department;
         private Button button4;
         private Button button5;
+        private DataGridViewTextBoxColumn col_EmployeeID;
+        private DataGridViewTextBoxColumn col_FullName;
+        private DataGridViewTextBoxColumn col_FullNameKana;
+        private DataGridViewTextBoxColumn col_Email;
+        private DataGridViewTextBoxColumn col_PhoneNumber;
+        private DataGridViewTextBoxColumn Department;
+        private DataGridViewTextBoxColumn Position;
+        private DataGridViewTextBoxColumn col_Status;
+        private Button button6;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
+        private GroupBox groupBox1;
     }
 }

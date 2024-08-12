@@ -1,24 +1,20 @@
-﻿namespace 社員情報管理システム
+﻿using System;
+using System.Windows.Forms;
+
+namespace 社員情報管理システム
 {
-    partial class EmployeeEditForm
+    partial class EmployeeDetailForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        //private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+     
 
         #region Windows Form Designer generated code
 
@@ -39,7 +35,6 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            label12 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
@@ -50,9 +45,10 @@
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
             button2 = new Button();
-            SuspendLayout();
+            textBox9 = new TextBox();
+            button1 = new Button();
+            //SuspendLayout();
             // 
             // label1
             // 
@@ -97,7 +93,7 @@
             label5.Name = "label5";
             label5.Size = new Size(69, 20);
             label5.TabIndex = 4;
-            label5.Text = "携帯番号";
+            label5.Text = "電話番号";
             // 
             // label6
             // 
@@ -152,15 +148,6 @@
             label11.Size = new Size(94, 20);
             label11.TabIndex = 10;
             label11.Text = "名前（かな）";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(151, 48);
-            label12.Name = "label12";
-            label12.Size = new Size(90, 20);
-            label12.TabIndex = 11;
-            label12.Text = "EmployeeID";
             // 
             // textBox1
             // 
@@ -233,57 +220,64 @@
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 21;
             // 
-            // button1
-            // 
-            button1.Location = new Point(260, 472);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 54);
-            button1.TabIndex = 22;
-            button1.Text = "更新する";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            button2.Location = new Point(531, 472);
+            button2.Location = new Point(559, 500);
             button2.Name = "button2";
             button2.Size = new Size(166, 54);
             button2.TabIndex = 23;
             button2.Text = "メインに戻る";
             button2.UseVisualStyleBackColor = true;
             // 
-            // EmployeeEditForm
+            // textBox9
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(722, 538);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "EmployeeEditForm";
-            Text = "社員情報詳細フォーム";
-            ResumeLayout(false);
-            PerformLayout();
+            textBox9.Location = new Point(151, 45);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(154, 27);
+            textBox9.TabIndex = 25;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(273, 500);
+            button1.Name = "button1";
+            button1.Size = new Size(166, 54);
+            button1.TabIndex = 26;
+            button1.Text = "更新する";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // EmployeeDetailForm
+            // 
+            //AutoScaleDimensions = new SizeF(8F, 20F);
+            //AutoScaleMode = AutoScaleMode.Font;
+            //ClientSize = new Size(737, 566);
+            //Controls.Add(button1);
+            //Controls.Add(textBox9);
+            //Controls.Add(button2);
+            //Controls.Add(dateTimePicker1);
+            //Controls.Add(textBox8);
+            //Controls.Add(textBox7);
+            //Controls.Add(comboBox1);
+            //Controls.Add(textBox6);
+            //Controls.Add(textBox5);
+            //Controls.Add(textBox4);
+            //Controls.Add(textBox3);
+            //Controls.Add(textBox2);
+            //Controls.Add(textBox1);
+            //Controls.Add(label11);
+            //Controls.Add(label10);
+            //Controls.Add(label9);
+            //Controls.Add(label8);
+            //Controls.Add(label7);
+            //Controls.Add(label6);
+            //Controls.Add(label5);
+            //Controls.Add(label4);
+            //Controls.Add(label3);
+            //Controls.Add(label2);
+            //Controls.Add(label1);
+            //Name = "EmployeeDetailForm";
+            //Text = "社員情報詳細フォーム";
+            //ResumeLayout(false);
+            //PerformLayout();
         }
 
         #endregion
@@ -299,7 +293,6 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private Label label12;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
@@ -310,7 +303,8 @@
         private TextBox textBox7;
         private TextBox textBox8;
         private DateTimePicker dateTimePicker1;
-        private Button button1;
         private Button button2;
+        private TextBox textBox9;
+        private Button button1;
     }
 }
