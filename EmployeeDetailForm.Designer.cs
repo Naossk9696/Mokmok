@@ -8,15 +8,23 @@ namespace 社員情報管理システム
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        //private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-     
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         #region Windows Form Designer generated code
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -247,37 +255,37 @@ namespace 社員情報管理システム
             // 
             // EmployeeDetailForm
             // 
-            //AutoScaleDimensions = new SizeF(8F, 20F);
-            //AutoScaleMode = AutoScaleMode.Font;
-            //ClientSize = new Size(737, 566);
-            //Controls.Add(button1);
-            //Controls.Add(textBox9);
-            //Controls.Add(button2);
-            //Controls.Add(dateTimePicker1);
-            //Controls.Add(textBox8);
-            //Controls.Add(textBox7);
-            //Controls.Add(comboBox1);
-            //Controls.Add(textBox6);
-            //Controls.Add(textBox5);
-            //Controls.Add(textBox4);
-            //Controls.Add(textBox3);
-            //Controls.Add(textBox2);
-            //Controls.Add(textBox1);
-            //Controls.Add(label11);
-            //Controls.Add(label10);
-            //Controls.Add(label9);
-            //Controls.Add(label8);
-            //Controls.Add(label7);
-            //Controls.Add(label6);
-            //Controls.Add(label5);
-            //Controls.Add(label4);
-            //Controls.Add(label3);
-            //Controls.Add(label2);
-            //Controls.Add(label1);
-            //Name = "EmployeeDetailForm";
-            //Text = "社員情報詳細フォーム";
-            //ResumeLayout(false);
-            //PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(737, 566);
+            Controls.Add(button1);
+            Controls.Add(textBox9);
+            Controls.Add(button2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(textBox8);
+            Controls.Add(textBox7);
+            Controls.Add(comboBox1);
+            Controls.Add(textBox6);
+            Controls.Add(textBox5);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "EmployeeDetailForm";
+            Text = "社員情報詳細フォーム";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

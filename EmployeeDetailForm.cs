@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace 社員情報管理システム
 {
-    public partial class EmployeeDtailForm : Form
+    public partial class EmployeeDetailForm : Form
     {
         
         
