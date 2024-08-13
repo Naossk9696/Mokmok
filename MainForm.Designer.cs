@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btn_close = new Button();
             button2 = new Button();
             button3 = new Button();
             label1 = new Label();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            employeeid = new DataGridViewTextBoxColumn();
+            firstname = new DataGridViewTextBoxColumn();
+            firstnameKana = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            phonenumber = new DataGridViewTextBoxColumn();
+            Department = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            HireDate = new DataGridViewTextBoxColumn();
+            status = new DataGridViewTextBoxColumn();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -42,29 +51,21 @@
             comboBox3 = new ComboBox();
             comboBox4 = new ComboBox();
             groupBox1 = new GroupBox();
-            employeeid = new DataGridViewTextBoxColumn();
-            firstname = new DataGridViewTextBoxColumn();
-            firstnameKana = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            phonenumber = new DataGridViewTextBoxColumn();
-            Department = new DataGridViewTextBoxColumn();
-            Position = new DataGridViewTextBoxColumn();
-            status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btn_close
             // 
-            button1.Location = new Point(1095, 692);
-            button1.Name = "button1";
-            button1.Size = new Size(165, 38);
-            button1.TabIndex = 1;
-            button1.Text = "終了";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += Button1_Click;
+            btn_close.Location = new Point(1095, 692);
+            btn_close.Name = "btn_close";
+            btn_close.Size = new Size(165, 38);
+            btn_close.TabIndex = 1;
+            btn_close.Text = "終了";
+            btn_close.UseVisualStyleBackColor = true;
+            btn_close.Click += btn_close_Click;
             // 
-            // button2
+            // button2b
             // 
             button2.Location = new Point(64, 200);
             button2.Name = "button2";
@@ -104,13 +105,76 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { employeeid, firstname, firstnameKana, email, phonenumber, Department, Position, status });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { employeeid, firstname, firstnameKana, email, phonenumber, Department, Position, HireDate, status });
             dataGridView1.Location = new Point(28, 301);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1232, 366);
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
+            // 
+            // employeeid
+            // 
+            employeeid.HeaderText = "社員番号";
+            employeeid.MinimumWidth = 6;
+            employeeid.Name = "employeeid";
+            employeeid.Width = 125;
+            // 
+            // firstname
+            // 
+            firstname.HeaderText = "名前";
+            firstname.MinimumWidth = 6;
+            firstname.Name = "firstname";
+            firstname.Width = 150;
+            // 
+            // firstnameKana
+            // 
+            firstnameKana.HeaderText = "名前カナ";
+            firstnameKana.MinimumWidth = 6;
+            firstnameKana.Name = "firstnameKana";
+            firstnameKana.Width = 150;
+            // 
+            // email
+            // 
+            email.HeaderText = "メールアドレス";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.Width = 200;
+            // 
+            // phonenumber
+            // 
+            phonenumber.HeaderText = "電話番号";
+            phonenumber.MinimumWidth = 6;
+            phonenumber.Name = "phonenumber";
+            phonenumber.Width = 170;
+            // 
+            // Department
+            // 
+            Department.HeaderText = "部門";
+            Department.MinimumWidth = 6;
+            Department.Name = "Department";
+            Department.Width = 125;
+            // 
+            // Position
+            // 
+            Position.HeaderText = "役職";
+            Position.MinimumWidth = 6;
+            Position.Name = "Position";
+            Position.Width = 125;
+            // 
+            // HireDate
+            // 
+            HireDate.HeaderText = "雇用日";
+            HireDate.MinimumWidth = 6;
+            HireDate.Name = "HireDate";
+            HireDate.Width = 125;
+            // 
+            // status
+            // 
+            status.HeaderText = "在籍状況";
+            status.MinimumWidth = 6;
+            status.Name = "status";
+            status.Width = 125;
             // 
             // button4
             // 
@@ -188,62 +252,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "検索条件";
             // 
-            // employeeid
-            // 
-            employeeid.HeaderText = "社員番号";
-            employeeid.MinimumWidth = 6;
-            employeeid.Name = "employeeid";
-            employeeid.Width = 125;
-            // 
-            // firstname
-            // 
-            firstname.HeaderText = "名前";
-            firstname.MinimumWidth = 6;
-            firstname.Name = "firstname";
-            firstname.Width = 150;
-            // 
-            // firstnameKana
-            // 
-            firstnameKana.HeaderText = "名前カナ";
-            firstnameKana.MinimumWidth = 6;
-            firstnameKana.Name = "firstnameKana";
-            firstnameKana.Width = 150;
-            // 
-            // email
-            // 
-            email.HeaderText = "メールアドレス";
-            email.MinimumWidth = 6;
-            email.Name = "email";
-            email.Width = 200;
-            // 
-            // phonenumber
-            // 
-            phonenumber.HeaderText = "電話番号";
-            phonenumber.MinimumWidth = 6;
-            phonenumber.Name = "phonenumber";
-            phonenumber.Width = 170;
-            // 
-            // Department
-            // 
-            Department.HeaderText = "部門";
-            Department.MinimumWidth = 6;
-            Department.Name = "Department";
-            Department.Width = 125;
-            // 
-            // Position
-            // 
-            Position.HeaderText = "役職";
-            Position.MinimumWidth = 6;
-            Position.Name = "Position";
-            Position.Width = 125;
-            // 
-            // status
-            // 
-            status.HeaderText = "在籍状況";
-            status.MinimumWidth = 6;
-            status.Name = "status";
-            status.Width = 125;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -255,7 +263,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_close);
             Name = "MainForm";
             Text = "社員情報管理システムメインフォーム";
             Load += MainForm_Load;
@@ -266,7 +274,7 @@
         }
 
         #endregion
-        private Button button1;
+        private Button btn_close;
         private Button button2;
         private Button button3;
         private Label label1;
@@ -287,6 +295,7 @@
         private DataGridViewTextBoxColumn phonenumber;
         private DataGridViewTextBoxColumn Department;
         private DataGridViewTextBoxColumn Position;
+        private DataGridViewTextBoxColumn HireDate;
         private DataGridViewTextBoxColumn status;
     }
 }

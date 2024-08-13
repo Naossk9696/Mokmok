@@ -5,6 +5,7 @@ using System;
 using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Eventing.Reader;
 
 namespace 社員情報管理システム
 {
@@ -15,10 +16,29 @@ namespace 社員情報管理システム
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
+            //終了前の確認
+            DialogResult result = MessageBox.Show("社員情報管理システムを終了しますか？", "確認",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            //選択肢
+            if (result == DialogResult.Yes)
+            {
+                //はい
+                this.Close();
+            }
+            
+            else if (result == DialogResult.No)
+            {
+                //いいえ
+                Console.WriteLine("キャンセルしました。");
+            }
+
 
         }
+      
 
         private void button2_Click(object sender, EventArgs e, EmployeeAddForm employeeAddForm)
         {
@@ -63,7 +83,7 @@ namespace 社員情報管理システム
                         adapter.Fill(dataTable);
 
                         //DataGritViewのカラム設定を使う=FALSE
-                        //dataGridView1.AutoGenerateColumns = false; 
+                        dataGridView1.AutoGenerateColumns = false; 
 
                         //カラム結合
                         // 新しいカラムを追加
@@ -77,12 +97,14 @@ namespace 社員情報管理システム
                             row["CombinedNameKana"] = row[dataTable.Columns[3].ColumnName].ToString() + " " + row[dataTable.Columns[4].ColumnName].ToString();
                         }
 
+                        //TBLデータをDataGritView1に表示
                         dataGridView1.Columns[0].DataPropertyName = dataTable.Columns[0].ColumnName;
                         dataGridView1.Columns[3].DataPropertyName = dataTable.Columns[5].ColumnName;
                         dataGridView1.Columns[4].DataPropertyName = dataTable.Columns[6].ColumnName;
                         dataGridView1.Columns[5].DataPropertyName = dataTable.Columns[8].ColumnName;
                         dataGridView1.Columns[6].DataPropertyName = dataTable.Columns[9].ColumnName;
-                        dataGridView1.Columns[7].DataPropertyName = dataTable.Columns[10].ColumnName;
+                        dataGridView1.Columns[7].DataPropertyName = dataTable.Columns[7].ColumnName;
+                        dataGridView1.Columns[8].DataPropertyName = dataTable.Columns[10].ColumnName;
 
                         dataGridView1.Columns[1].DataPropertyName = "CombinedFullName";
                         dataGridView1.Columns[2].DataPropertyName = "CombinedNameKana";
