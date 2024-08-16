@@ -29,7 +29,7 @@ namespace 社員情報管理システム
                 //はい
                 this.Close();
             }
-            
+
             else if (result == DialogResult.No)
             {
                 //いいえ
@@ -38,10 +38,12 @@ namespace 社員情報管理システム
 
 
         }
-      
 
-        private void button2_Click(object sender, EventArgs e, EmployeeAddForm employeeAddForm)
+
+        private void btn_add_Click(object sender, EventArgs e)
         {
+            //新規登録フォームを開く
+            EmployeeAddForm employeeAddForm = new EmployeeAddForm();
             employeeAddForm.Show();
         }
 
@@ -83,7 +85,7 @@ namespace 社員情報管理システム
                         adapter.Fill(dataTable);
 
                         //DataGritViewのカラム設定を使う=FALSE
-                        dataGridView1.AutoGenerateColumns = false; 
+                        dataGridView1.AutoGenerateColumns = false;
 
                         //カラム結合
                         // 新しいカラムを追加
@@ -116,8 +118,13 @@ namespace 社員情報管理システム
             }
 
         }
+
+        private void btn_detail_Click(object sender, EventArgs e)
+        {
+            EmployeeDetailForm employeeDetailForm = new EmployeeDetailForm();
+            employeeDetailForm.Show();
+        }
     }
 
 }
-
 

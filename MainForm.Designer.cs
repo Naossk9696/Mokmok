@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btn_close = new Button();
-            button2 = new Button();
+            btn_add = new Button();
             button3 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -44,7 +44,7 @@
             HireDate = new DataGridViewTextBoxColumn();
             status = new DataGridViewTextBoxColumn();
             button4 = new Button();
-            button5 = new Button();
+            btn_detail = new Button();
             button6 = new Button();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
@@ -65,14 +65,15 @@
             btn_close.UseVisualStyleBackColor = true;
             btn_close.Click += btn_close_Click;
             // 
-            // button2b
+            // btn_add
             // 
-            button2.Location = new Point(64, 200);
-            button2.Name = "button2";
-            button2.Size = new Size(165, 41);
-            button2.TabIndex = 2;
-            button2.Text = "新規登録";
-            button2.UseVisualStyleBackColor = true;
+            btn_add.Location = new Point(64, 200);
+            btn_add.Name = "btn_add";
+            btn_add.Size = new Size(165, 41);
+            btn_add.TabIndex = 2;
+            btn_add.Text = "新規登録";
+            btn_add.UseVisualStyleBackColor = true;
+            btn_add.Click += btn_add_Click;
             // 
             // button3
             // 
@@ -186,14 +187,15 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // button5
+            // btn_detail
             // 
-            button5.Location = new Point(64, 117);
-            button5.Name = "button5";
-            button5.Size = new Size(165, 41);
-            button5.TabIndex = 25;
-            button5.Text = "社員詳細表示";
-            button5.UseVisualStyleBackColor = true;
+            btn_detail.Location = new Point(64, 117);
+            btn_detail.Name = "btn_detail";
+            btn_detail.Size = new Size(165, 41);
+            btn_detail.TabIndex = 25;
+            btn_detail.Text = "社員詳細表示";
+            btn_detail.UseVisualStyleBackColor = true;
+            btn_detail.Click += btn_detail_Click;
             // 
             // button6
             // 
@@ -258,11 +260,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1272, 742);
             Controls.Add(groupBox1);
-            Controls.Add(button5);
+            Controls.Add(btn_detail);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
+            Controls.Add(btn_add);
             Controls.Add(btn_close);
             Name = "MainForm";
             Text = "社員情報管理システムメインフォーム";
@@ -275,13 +277,12 @@
 
         #endregion
         private Button btn_close;
-        private Button button2;
         private Button button3;
         private Label label1;
         private Label label2;
         private DataGridView dataGridView1;
         private Button button4;
-        private Button button5;
+        private Button btn_detail;
         private Button button6;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
@@ -297,5 +298,6 @@
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn HireDate;
         private DataGridViewTextBoxColumn status;
+        public Button btn_add;
     }
 }

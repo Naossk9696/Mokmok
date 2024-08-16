@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace 社員情報管理システム
 {
     partial class EmployeeDetailForm
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -25,6 +26,7 @@ namespace 社員情報管理システム
         }
 
         #region Windows Form Designer generated code
+
 
 
         /// <summary>
@@ -54,10 +56,10 @@ namespace 社員情報管理システム
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            button2 = new Button();
+            btn_back = new Button();
             textBox9 = new TextBox();
-            button1 = new Button();
-            //SuspendLayout();
+            btn_update = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
@@ -229,14 +231,15 @@ namespace 社員情報管理システム
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 21;
             // 
-            // button2
+            // btn_back
             // 
-            button2.Location = new Point(559, 500);
-            button2.Name = "button2";
-            button2.Size = new Size(166, 54);
-            button2.TabIndex = 23;
-            button2.Text = "メインに戻る";
-            button2.UseVisualStyleBackColor = true;
+            btn_back.Location = new Point(559, 500);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(166, 54);
+            btn_back.TabIndex = 23;
+            btn_back.Text = "メインに戻る";
+            btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += btn_back_Click_1;
             // 
             // textBox9
             // 
@@ -245,23 +248,24 @@ namespace 社員情報管理システム
             textBox9.Size = new Size(154, 27);
             textBox9.TabIndex = 25;
             // 
-            // button1
+            // btn_update
             // 
-            button1.Location = new Point(273, 500);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 54);
-            button1.TabIndex = 26;
-            button1.Text = "更新する";
-            button1.UseVisualStyleBackColor = true;
+            btn_update.Location = new Point(273, 500);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(166, 54);
+            btn_update.TabIndex = 26;
+            btn_update.Text = "更新する";
+            btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
             // 
             // EmployeeDetailForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(737, 566);
-            Controls.Add(button1);
+            Controls.Add(btn_update);
             Controls.Add(textBox9);
-            Controls.Add(button2);
+            Controls.Add(btn_back);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
@@ -312,8 +316,10 @@ namespace 社員情報管理システム
         private TextBox textBox7;
         private TextBox textBox8;
         private DateTimePicker dateTimePicker1;
-        private Button button2;
+        private Button btn_back;
         private TextBox textBox9;
-        private Button button1;
+        private Button btn_update;
     }
+    
+    
 }

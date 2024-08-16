@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btn_back = new Button();
+            btn_addinfo = new Button();
             label1 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -54,23 +54,25 @@
             comboBox3 = new ComboBox();
             SuspendLayout();
             // 
-            // button1
+            // btn_back
             // 
-            button1.Location = new Point(501, 553);
-            button1.Name = "button1";
-            button1.Size = new Size(144, 55);
-            button1.TabIndex = 0;
-            button1.Text = "メインに戻る";
-            button1.UseVisualStyleBackColor = true;
+            btn_back.Location = new Point(501, 553);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(144, 55);
+            btn_back.TabIndex = 0;
+            btn_back.Text = "メインに戻る";
+            btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += btn_back_Click;
             // 
-            // button2
+            // btn_addinfo
             // 
-            button2.Location = new Point(220, 553);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 55);
-            button2.TabIndex = 1;
-            button2.Text = "登録する";
-            button2.UseVisualStyleBackColor = true;
+            btn_addinfo.Location = new Point(220, 553);
+            btn_addinfo.Name = "btn_addinfo";
+            btn_addinfo.Size = new Size(203, 55);
+            btn_addinfo.TabIndex = 1;
+            btn_addinfo.Text = "登録する";
+            btn_addinfo.UseVisualStyleBackColor = true;
+            btn_addinfo.Click += btn_addinfo_Click;
             // 
             // label1
             // 
@@ -98,7 +100,6 @@
             label2.Size = new Size(79, 20);
             label2.TabIndex = 6;
             label2.Text = "姓（かな）";
-            label2.Click += label2_Click;
             // 
             // label5
             // 
@@ -281,8 +282,8 @@
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_addinfo);
+            Controls.Add(btn_back);
             Name = "EmployeeAddForm";
             Text = "社員情報新規登録フォーム";
             ResumeLayout(false);
@@ -291,8 +292,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btn_back;
+        private Button btn_addinfo;
         private Label label1;
         private Label label3;
         private Label label2;

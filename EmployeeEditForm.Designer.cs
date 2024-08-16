@@ -43,8 +43,8 @@ namespace 社員情報管理システム
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btn_delete = new Button();
+            btn_close = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
@@ -157,23 +157,25 @@ namespace 社員情報管理システム
             label11.TabIndex = 10;
             label11.Text = "名前（かな）";
             // 
-            // button1
+            // btn_delete
             // 
-            button1.Location = new Point(250, 468);
-            button1.Name = "button1";
-            button1.Size = new Size(178, 54);
-            button1.TabIndex = 11;
-            button1.Text = "削除する";
-            button1.UseVisualStyleBackColor = true;
+            btn_delete.Location = new Point(250, 468);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(178, 54);
+            btn_delete.TabIndex = 11;
+            btn_delete.Text = "削除する";
+            btn_delete.UseVisualStyleBackColor = true;
+            btn_delete.Click += btn_delete_Click;
             // 
-            // button2
+            // btn_close
             // 
-            button2.Location = new Point(568, 468);
-            button2.Name = "button2";
-            button2.Size = new Size(122, 54);
-            button2.TabIndex = 12;
-            button2.Text = "閉じる";
-            button2.UseVisualStyleBackColor = true;
+            btn_close.Location = new Point(568, 468);
+            btn_close.Name = "btn_close";
+            btn_close.Size = new Size(122, 54);
+            btn_close.TabIndex = 12;
+            btn_close.Text = "閉じる";
+            btn_close.UseVisualStyleBackColor = true;
+            btn_close.Click += btn_close_Click;
             // 
             // textBox1
             // 
@@ -273,8 +275,8 @@ namespace 社員情報管理システム
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_close);
+            Controls.Add(btn_delete);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -304,8 +306,8 @@ namespace 社員情報管理システム
         private Label label9;
         private Label label10;
         private Label label11;
-        private Button button1;
-        private Button button2;
+        private Button btn_delete;
+        private Button btn_close;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
