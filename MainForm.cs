@@ -6,6 +6,7 @@ using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Eventing.Reader;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace 社員情報管理システム
 {
@@ -72,12 +73,20 @@ namespace 社員情報管理システム
             {
                 string connectionString = "Host=localhost; Port= 5432; Username = postgres;Password = naojd0921;Database=Kanri";
 
-                using (var connectioin = new NpgsqlConnection(connectionString))
+                using (var connection = new NpgsqlConnection(connectionString))
                 {
 
-                    connectioin.Open();
-                    string query = "SELECT * FROM public.\"Employees\"";
-                    using (var command = new NpgsqlCommand(query, connectioin))
+                    connection.Open();
+
+                    //string query = "SELECT * FROM public.\"Employees\"";
+
+                    string query = @"
+                    SELECT e.EmployeeID, e.FirstName, e.LastName, e.firstnamekana, e.lastnamekana, e.email, e.phonenumber, e.hiredate, d.departmentName, p.PositionName, e.status
+                    FROM public.""Employees"" e
+                    JOIN public.""departments"" d ON e.""Department"" = d.departmentid
+                    JOIN public.""positions"" p ON e.""Position"" = p.positionid";
+
+                    using (var command = new NpgsqlCommand(query, connection))
                     using (var adapter = new NpgsqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
@@ -101,6 +110,8 @@ namespace 社員情報管理システム
 
                         //TBLデータをDataGritView1に表示
                         dataGridView1.Columns[0].DataPropertyName = dataTable.Columns[0].ColumnName;
+                        dataGridView1.Columns[1].DataPropertyName = "CombinedFullName";
+                        dataGridView1.Columns[2].DataPropertyName = "CombinedNameKana";
                         dataGridView1.Columns[3].DataPropertyName = dataTable.Columns[5].ColumnName;
                         dataGridView1.Columns[4].DataPropertyName = dataTable.Columns[6].ColumnName;
                         dataGridView1.Columns[5].DataPropertyName = dataTable.Columns[8].ColumnName;
@@ -108,8 +119,6 @@ namespace 社員情報管理システム
                         dataGridView1.Columns[7].DataPropertyName = dataTable.Columns[7].ColumnName;
                         dataGridView1.Columns[8].DataPropertyName = dataTable.Columns[10].ColumnName;
 
-                        dataGridView1.Columns[1].DataPropertyName = "CombinedFullName";
-                        dataGridView1.Columns[2].DataPropertyName = "CombinedNameKana";
 
                         dataGridView1.DataSource = dataTable;
 
