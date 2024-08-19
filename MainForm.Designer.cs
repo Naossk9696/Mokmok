@@ -34,6 +34,14 @@
             label1 = new Label();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            button4 = new Button();
+            btn_detail = new Button();
+            button6 = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            groupBox1 = new GroupBox();
             employeeid = new DataGridViewTextBoxColumn();
             firstname = new DataGridViewTextBoxColumn();
             firstnameKana = new DataGridViewTextBoxColumn();
@@ -43,14 +51,10 @@
             Position = new DataGridViewTextBoxColumn();
             HireDate = new DataGridViewTextBoxColumn();
             status = new DataGridViewTextBoxColumn();
-            button4 = new Button();
-            btn_detail = new Button();
-            button6 = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            groupBox1 = new GroupBox();
+            LastNameKana = new DataGridViewTextBoxColumn();
+            FirstNameKana_ = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            FirstName_ = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -106,76 +110,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { employeeid, firstname, firstnameKana, email, phonenumber, Department, Position, HireDate, status });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { employeeid, firstname, firstnameKana, email, phonenumber, Department, Position, HireDate, status, LastNameKana, FirstNameKana_, LastName, FirstName_ });
             dataGridView1.Location = new Point(28, 301);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1232, 366);
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
-            // 
-            // employeeid
-            // 
-            employeeid.HeaderText = "社員番号";
-            employeeid.MinimumWidth = 6;
-            employeeid.Name = "employeeid";
-            employeeid.Width = 125;
-            // 
-            // firstname
-            // 
-            firstname.HeaderText = "名前";
-            firstname.MinimumWidth = 6;
-            firstname.Name = "firstname";
-            firstname.Width = 150;
-            // 
-            // firstnameKana
-            // 
-            firstnameKana.HeaderText = "名前カナ";
-            firstnameKana.MinimumWidth = 6;
-            firstnameKana.Name = "firstnameKana";
-            firstnameKana.Width = 150;
-            // 
-            // email
-            // 
-            email.HeaderText = "メールアドレス";
-            email.MinimumWidth = 6;
-            email.Name = "email";
-            email.Width = 200;
-            // 
-            // phonenumber
-            // 
-            phonenumber.HeaderText = "電話番号";
-            phonenumber.MinimumWidth = 6;
-            phonenumber.Name = "phonenumber";
-            phonenumber.Width = 170;
-            // 
-            // Department
-            // 
-            Department.HeaderText = "部門";
-            Department.MinimumWidth = 6;
-            Department.Name = "Department";
-            Department.Width = 125;
-            // 
-            // Position
-            // 
-            Position.HeaderText = "役職";
-            Position.MinimumWidth = 6;
-            Position.Name = "Position";
-            Position.Width = 125;
-            // 
-            // HireDate
-            // 
-            HireDate.HeaderText = "雇用日";
-            HireDate.MinimumWidth = 6;
-            HireDate.Name = "HireDate";
-            HireDate.Width = 125;
-            // 
-            // status
-            // 
-            status.HeaderText = "在籍状況";
-            status.MinimumWidth = 6;
-            status.Name = "status";
-            status.Width = 125;
             // 
             // button4
             // 
@@ -254,6 +195,101 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "検索条件";
             // 
+            // employeeid
+            // 
+            employeeid.HeaderText = "社員番号";
+            employeeid.MinimumWidth = 6;
+            employeeid.Name = "employeeid";
+            employeeid.Width = 125;
+            // 
+            // firstname
+            // 
+            firstname.HeaderText = "名前";
+            firstname.MinimumWidth = 6;
+            firstname.Name = "firstname";
+            firstname.Width = 150;
+            // 
+            // firstnameKana
+            // 
+            firstnameKana.HeaderText = "名前カナ";
+            firstnameKana.MinimumWidth = 6;
+            firstnameKana.Name = "firstnameKana";
+            firstnameKana.Width = 150;
+            // 
+            // email
+            // 
+            email.HeaderText = "メールアドレス";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.Width = 200;
+            // 
+            // phonenumber
+            // 
+            phonenumber.HeaderText = "電話番号";
+            phonenumber.MinimumWidth = 6;
+            phonenumber.Name = "phonenumber";
+            phonenumber.Width = 170;
+            // 
+            // Department
+            // 
+            Department.HeaderText = "部門";
+            Department.MinimumWidth = 6;
+            Department.Name = "Department";
+            Department.Width = 125;
+            // 
+            // Position
+            // 
+            Position.HeaderText = "役職";
+            Position.MinimumWidth = 6;
+            Position.Name = "Position";
+            Position.Width = 125;
+            // 
+            // HireDate
+            // 
+            HireDate.HeaderText = "雇用日";
+            HireDate.MinimumWidth = 6;
+            HireDate.Name = "HireDate";
+            HireDate.Width = 125;
+            // 
+            // status
+            // 
+            status.HeaderText = "在籍状況";
+            status.MinimumWidth = 6;
+            status.Name = "status";
+            status.Width = 125;
+            // 
+            // LastNameKana
+            // 
+            LastNameKana.HeaderText = "姓かな";
+            LastNameKana.MinimumWidth = 6;
+            LastNameKana.Name = "LastNameKana";
+            LastNameKana.Visible = false;
+            LastNameKana.Width = 125;
+            // 
+            // FirstNameKana_
+            // 
+            FirstNameKana_.HeaderText = "名前かな";
+            FirstNameKana_.MinimumWidth = 6;
+            FirstNameKana_.Name = "FirstNameKana_";
+            FirstNameKana_.Visible = false;
+            FirstNameKana_.Width = 125;
+            // 
+            // LastName
+            // 
+            LastName.HeaderText = "姓";
+            LastName.MinimumWidth = 6;
+            LastName.Name = "LastName";
+            LastName.Visible = false;
+            LastName.Width = 125;
+            // 
+            // FirstName_
+            // 
+            FirstName_.HeaderText = "名";
+            FirstName_.MinimumWidth = 6;
+            FirstName_.Name = "FirstName_";
+            FirstName_.Visible = false;
+            FirstName_.Width = 125;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -289,6 +325,7 @@
         private ComboBox comboBox3;
         private ComboBox comboBox4;
         private GroupBox groupBox1;
+        public Button btn_add;
         private DataGridViewTextBoxColumn employeeid;
         private DataGridViewTextBoxColumn firstname;
         private DataGridViewTextBoxColumn firstnameKana;
@@ -298,6 +335,9 @@
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn HireDate;
         private DataGridViewTextBoxColumn status;
-        public Button btn_add;
+        private DataGridViewTextBoxColumn LastNameKana;
+        private DataGridViewTextBoxColumn FirstNameKana_;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn FirstName_;
     }
 }

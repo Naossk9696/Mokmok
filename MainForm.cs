@@ -7,6 +7,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Eventing.Reader;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Security;
 
 namespace 社員情報管理システム
 {
@@ -101,23 +102,31 @@ namespace 社員情報管理システム
                         dataTable.Columns.Add("CombinedFullName", typeof(string));
                         dataTable.Columns.Add("CombinedNameKana", typeof(string));
 
+
                         // 既存のカラムを結合して新しいカラムに値を設定
                         foreach (DataRow row in dataTable.Rows)
                         {
-                            row["CombinedFullName"] = row[dataTable.Columns[1].ColumnName].ToString() + " " + row[dataTable.Columns[2].ColumnName].ToString();
-                            row["CombinedNameKana"] = row[dataTable.Columns[3].ColumnName].ToString() + " " + row[dataTable.Columns[4].ColumnName].ToString();
+                            //row["CombinedFullName"] = row[dataTable.Columns[1].ColumnName].ToString() + " " + row[dataTable.Columns[2].ColumnName].ToString();
+                            //row["CombinedNameKana"] = row[dataTable.Columns[3].ColumnName].ToString() + " " + row[dataTable.Columns[4].ColumnName].ToString();
+                            row["CombinedFullName"] = row["lastName"].ToString() + " " + row["FirstName"].ToString();
+                            row["CombinedNameKana"] = row["lastnamekana"].ToString() + " " + row["firstnamekana"].ToString();
                         }
 
                         //TBLデータをDataGritView1に表示
-                        dataGridView1.Columns[0].DataPropertyName = dataTable.Columns[0].ColumnName;
+                        //dataGridView1.Columns[3].DataPropertyName = dataTable.Columns[5].ColumnName;
+                        dataGridView1.Columns[0].DataPropertyName = "employeeid";
                         dataGridView1.Columns[1].DataPropertyName = "CombinedFullName";
                         dataGridView1.Columns[2].DataPropertyName = "CombinedNameKana";
-                        dataGridView1.Columns[3].DataPropertyName = dataTable.Columns[5].ColumnName;
-                        dataGridView1.Columns[4].DataPropertyName = dataTable.Columns[6].ColumnName;
-                        dataGridView1.Columns[5].DataPropertyName = dataTable.Columns[8].ColumnName;
-                        dataGridView1.Columns[6].DataPropertyName = dataTable.Columns[9].ColumnName;
-                        dataGridView1.Columns[7].DataPropertyName = dataTable.Columns[7].ColumnName;
-                        dataGridView1.Columns[8].DataPropertyName = dataTable.Columns[10].ColumnName;
+                        dataGridView1.Columns[3].DataPropertyName = "email";
+                        dataGridView1.Columns[4].DataPropertyName = "phonenumber";
+                        dataGridView1.Columns[5].DataPropertyName = "departmentName";
+                        dataGridView1.Columns[6].DataPropertyName = "PositionName";
+                        dataGridView1.Columns[7].DataPropertyName = "hiredate";
+                        dataGridView1.Columns[8].DataPropertyName = "status";
+                        dataGridView1.Columns[9].DataPropertyName = "lastnamekana";
+                        dataGridView1.Columns[10].DataPropertyName = "firstnamekana";
+                        dataGridView1.Columns[11].DataPropertyName = "LastName";
+                        dataGridView1.Columns[12].DataPropertyName = "FirstName";
 
 
                         dataGridView1.DataSource = dataTable;
@@ -130,10 +139,57 @@ namespace 社員情報管理システム
 
         private void btn_detail_Click(object sender, EventArgs e)
         {
-            EmployeeDetailForm employeeDetailForm = new EmployeeDetailForm();
-            employeeDetailForm.Show();
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+
+                // 
+                string EmployeeID = selectedRow.Cells["employeeid"].Value?.ToString();
+                string firstName = selectedRow.Cells["FirstName_"].Value?.ToString();
+                string LastName = selectedRow.Cells["LastName"].Value?.ToString();
+                string firstNameKana = selectedRow.Cells["firstnamekana_"].Value?.ToString();
+                string lastNameKana = selectedRow.Cells["lastnamekana"].Value?.ToString();
+                string email = selectedRow.Cells["email"].Value?.ToString();
+                string phonenumber = selectedRow.Cells["phonenumber"].Value.ToString();
+                string departmentName = selectedRow.Cells["department"].Value?.ToString();
+                string PositionName = selectedRow.Cells["Position"].Value?.ToString();
+                string hiredate = selectedRow.Cells["hiredate"].Value?.ToString();
+                string status = selectedRow.Cells["status"].Value?.ToString();
+
+
+                // 取得したデータを渡して詳細フォームを表示
+                EmployeeDetailForm employeeDetailForm = new EmployeeDetailForm();
+                employeeDetailForm.EmployeeID = EmployeeID;
+                employeeDetailForm.FirstName = firstName;
+                employeeDetailForm.LastName = LastName;
+                employeeDetailForm.FirstNameKana = firstNameKana;
+                employeeDetailForm.LastNameKana = lastNameKana;
+                employeeDetailForm.Email = email;
+                employeeDetailForm.PhoneNumber = phonenumber;
+                employeeDetailForm.DepartmentName = departmentName;
+                employeeDetailForm.PositionName = PositionName;
+                employeeDetailForm.HireDate = hiredate;
+                employeeDetailForm.Status = status;
+
+                employeeDetailForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("データが選択されていません。");
+            }
+
+
         }
+
+
+           
+        
+
     }
+
 
 }
 
