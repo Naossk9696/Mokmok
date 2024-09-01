@@ -70,6 +70,7 @@ namespace 社員情報管理システム
             }
         }
 
+        //新規登録フォームを表示
         private void EmployeeAddForm_Load(object sender, EventArgs e)
         {
 

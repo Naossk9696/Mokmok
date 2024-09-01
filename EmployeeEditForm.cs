@@ -11,10 +11,81 @@ using System.Windows.Forms;
 namespace 社員情報管理システム
 {
     public partial class EmployeeEditForm : Form
+
+        
     {
+        //初期設定
+        public string EmployeeID
+        {
+            get { return txt_EmployeeID.Text; }
+            set { txt_EmployeeID.Text = value; }
+        }
+
+        public string FirstName
+        {
+            get { return txt_FirstName.Text; }
+            set { txt_FirstName.Text = value; }
+        }
+
+        public string LastName
+        {
+            get { return txt_Lastname.Text; }
+            set { txt_Lastname.Text = value; }
+        }
+
+        public string FirstNameKana
+        {
+            get { return txt_FirstNameKana.Text; }
+            set { txt_FirstNameKana.Text = value; }
+        }
+
+        public string LastNameKana
+        {
+            get { return txt_LastNameKana.Text; }
+            set { txt_LastNameKana.Text = value; }
+        }
+
+        public string Email
+        {
+            get { return txt_email.Text; }
+            set { txt_email.Text = value; }
+        }
+
+        public string PhoneNumber
+        {
+            get { return txt_Phonenumber.Text; }
+            set { txt_Phonenumber.Text = value; }
+        }
+
+        public string DepartmentName
+        {
+            get { return cmb_Department.Text; }
+            set { cmb_Department.Text = value; }
+        }
+
+        public string PositionName
+        {
+            get { return cmb_Position.Text; }
+            set { cmb_Position.Text = value; }
+        }
+
+        public string HireDate
+        {
+            get { return date_HireDate.Text; }
+            set { date_HireDate.Text = value; }
+        }
+
+        public string Status
+        {
+            get { return cmb_Status.Text; }
+            set { cmb_Status.Text = value; }
+        }
+
+
+
         public EmployeeEditForm()
         {
-
+            InitializeComponent();
         }
         //mainフォームに戻る
         private void btn_close_Click(object sender, EventArgs e)
@@ -40,32 +111,46 @@ namespace 社員情報管理システム
             }
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+       
+        private void EmployeeEditForm_Load(object sender, EventArgs e)
         {
-            //削除前の確認
-            DialogResult result = MessageBox.Show("XXさんを削除して宜しいでしょうか？", "確認",
+
+        }
+
+        //社員情報を更新する
+        private void btn_Openupdform_Click(object sender, EventArgs e)
+        {
+            //入力した情報でDBを更新する
+            //更新前の確認
+            {
+                DialogResult result = MessageBox.Show(txt_Lastname.Text + txt_FirstName.Text + "さんを更新して宜しいでしょうか？", "確認",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
-            //選択肢
-            if (result == DialogResult.Yes)
-            {
-                //はい
-                //DB更新
-                MessageBox.Show("削除しました。メイン画面に戻ります。", "確認");
+                //選択肢
+                if (result == DialogResult.Yes)
+                {
+                    //はい
 
-                this.Close();
+                    //DBを更新する
+
+
+                    //更新完了
+                    MessageBox.Show("更新しました。", "確認");
+                    this.Close();
+                }
+
+                else if (result == DialogResult.No)
+                {
+                    //いいえ
+                    Console.WriteLine("更新をキャンセルしました。");
+                }
             }
 
-            else if (result == DialogResult.No)
-            {
-                //いいえ
-                Console.WriteLine("キャンセルしました。");
-            }
-        }
 
-        private void EmployeeEditForm_Load(object sender, EventArgs e)
-        {
+
+
+
 
         }
     }

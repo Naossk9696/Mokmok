@@ -59,7 +59,7 @@ namespace 社員情報管理システム
             btn_back = new Button();
             txt_Employeeid = new TextBox();
             btn_update = new Button();
-            btn_delete = new Button();
+            btn_Delete = new Button();
             SuspendLayout();
             // 
             // label1
@@ -234,9 +234,9 @@ namespace 社員情報管理システム
             // 
             // btn_back
             // 
-            btn_back.Location = new Point(559, 500);
+            btn_back.Location = new Point(593, 426);
             btn_back.Name = "btn_back";
-            btn_back.Size = new Size(166, 54);
+            btn_back.Size = new Size(132, 54);
             btn_back.TabIndex = 23;
             btn_back.Text = "メインに戻る";
             btn_back.UseVisualStyleBackColor = true;
@@ -251,30 +251,30 @@ namespace 社員情報管理システム
             // 
             // btn_update
             // 
-            btn_update.Location = new Point(273, 500);
+            btn_update.Location = new Point(593, 345);
             btn_update.Name = "btn_update";
-            btn_update.Size = new Size(166, 54);
+            btn_update.Size = new Size(132, 54);
             btn_update.TabIndex = 26;
             btn_update.Text = "更新する";
             btn_update.UseVisualStyleBackColor = true;
             btn_update.Click += btn_update_Click;
             // 
-            // btn_delete
+            // btn_Delete
             // 
-            btn_delete.Location = new Point(609, 23);
-            btn_delete.Name = "btn_delete";
-            btn_delete.Size = new Size(116, 45);
-            btn_delete.TabIndex = 28;
-            btn_delete.Text = "削除する";
-            btn_delete.UseVisualStyleBackColor = true;
-            btn_delete.Click += btn_delete_Click;
+            btn_Delete.Location = new Point(593, 12);
+            btn_Delete.Name = "btn_Delete";
+            btn_Delete.Size = new Size(132, 41);
+            btn_Delete.TabIndex = 27;
+            btn_Delete.Text = "削除する";
+            btn_Delete.UseVisualStyleBackColor = true;
+            btn_Delete.Click += btn_Delete_Click_1;
             // 
             // EmployeeDetailForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(737, 566);
-            Controls.Add(btn_delete);
+            ClientSize = new Size(737, 505);
+            Controls.Add(btn_Delete);
             Controls.Add(btn_update);
             Controls.Add(txt_Employeeid);
             Controls.Add(btn_back);
@@ -332,7 +332,7 @@ namespace 社員情報管理システム
         private Button btn_back;
         private TextBox txt_Employeeid;
         private Button btn_update;
-        private Button btn_delete;
+        private Button btn_Delete;
     }
 
    

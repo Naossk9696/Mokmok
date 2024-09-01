@@ -84,38 +84,33 @@ namespace 社員情報管理システム
         //社員情報を更新する
         private void btn_update_Click(object sender, EventArgs e)
         {
-            //入力した情報でDBを更新する
-            //更新前の確認
-            {
-                DialogResult result = MessageBox.Show(txt_Lastname.Text + txt_FirstName.Text + "さんを更新して宜しいでしょうか？", "確認",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
+            //取得した情報を社員情報編集フォームに渡す
+            EmployeeEditForm employeeEditForm = new EmployeeEditForm();
 
-                //選択肢
-                if (result == DialogResult.Yes)
-                {
-                    //はい
+            employeeEditForm.EmployeeID = txt_Employeeid.Text;
+            employeeEditForm.FirstName = txt_FirstName.Text;
+            employeeEditForm.LastName = txt_Lastname.Text;
+            employeeEditForm.FirstNameKana = txt_Namekana.Text;
+            employeeEditForm.LastNameKana = txt_LastnameKana.Text;
+            employeeEditForm.Email = txt_email.Text;
+            employeeEditForm.PhoneNumber = txt_phonenumber.Text;
+            employeeEditForm.DepartmentName = cmb_Department.Text;
+            employeeEditForm.PositionName = cmb_position.Text;
+            employeeEditForm.HireDate = date_hiredate.Text;
+            employeeEditForm.Status = txt_status.Text;
 
-                    //DBを更新する
 
+            //社員情報編集フォームを開く
+            employeeEditForm.ShowDialog();
 
-                    //更新完了
-                    MessageBox.Show("更新しました。", "確認");
-                    this.Close();
-                }
+            
 
-                else if (result == DialogResult.No)
-                {
-                    //いいえ
-                    Console.WriteLine("更新をキャンセルしました。");
-                }
-            }
         }
 
         //社員情報を削除する
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(txt_Lastname.Text +  txt_FirstName.Text + "さんを削除して宜しいでしょうか？", "確認",
+            DialogResult result = MessageBox.Show(txt_Lastname.Text + txt_FirstName.Text + "さんを削除して宜しいでしょうか？", "確認",
                    MessageBoxButtons.YesNo,
                    MessageBoxIcon.Question);
 
@@ -138,7 +133,32 @@ namespace 社員情報管理システム
                 Console.WriteLine("削除をキャンセルしました。");
             }
         }
+        //社員情報を削除する
+        private void btn_Delete_Click_1(object sender, EventArgs e)
+        {
+            //削除前の確認
+            DialogResult result = MessageBox.Show("XXさんを削除して宜しいでしょうか？", "確認",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            //選択肢
+            if (result == DialogResult.Yes)
+            {
+                //はい
+                //DB更新
+                MessageBox.Show("削除しました。メイン画面に戻ります。", "確認");
+
+                this.Close();
+            }
+
+            else if (result == DialogResult.No)
+            {
+                //いいえ
+                Console.WriteLine("キャンセルしました。");
+            }
+        }
     }
+    
 }
 
 
