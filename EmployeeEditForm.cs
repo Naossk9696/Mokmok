@@ -63,5 +63,10 @@ namespace 社員情報管理システム
                 Console.WriteLine("キャンセルしました。");
             }
         }
+
+        private void EmployeeEditForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

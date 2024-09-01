@@ -39,19 +39,19 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            label11 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txt_LastName = new TextBox();
+            txt_FirstName = new TextBox();
             label12 = new Label();
             label13 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox3 = new ComboBox();
+            txt_LastnameKana = new TextBox();
+            txt_FirstnameKana = new TextBox();
+            txt_email = new TextBox();
+            txt_phonenumber = new TextBox();
+            cmb_Department = new ComboBox();
+            cmb_Position = new ComboBox();
+            date_hiredate = new DateTimePicker();
+            cmb_status = new ComboBox();
+            txt_EmployeeID = new TextBox();
             SuspendLayout();
             // 
             // btn_back
@@ -155,28 +155,19 @@
             label10.TabIndex = 13;
             label10.Text = "在職状況";
             // 
-            // label11
+            // txt_LastName
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(161, 75);
-            label11.Name = "label11";
-            label11.Size = new Size(58, 20);
-            label11.TabIndex = 15;
-            label11.Text = "label11";
+            txt_LastName.Location = new Point(164, 121);
+            txt_LastName.Name = "txt_LastName";
+            txt_LastName.Size = new Size(152, 27);
+            txt_LastName.TabIndex = 16;
             // 
-            // textBox1
+            // txt_FirstName
             // 
-            textBox1.Location = new Point(164, 121);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(152, 27);
-            textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(448, 124);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(152, 27);
-            textBox2.TabIndex = 17;
+            txt_FirstName.Location = new Point(448, 124);
+            txt_FirstName.Name = "txt_FirstName";
+            txt_FirstName.Size = new Size(152, 27);
+            txt_FirstName.TabIndex = 17;
             // 
             // label12
             // 
@@ -196,83 +187,90 @@
             label13.TabIndex = 19;
             label13.Text = "名前（かな）";
             // 
-            // textBox3
+            // txt_LastnameKana
             // 
-            textBox3.Location = new Point(164, 170);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(152, 27);
-            textBox3.TabIndex = 20;
+            txt_LastnameKana.Location = new Point(164, 170);
+            txt_LastnameKana.Name = "txt_LastnameKana";
+            txt_LastnameKana.Size = new Size(152, 27);
+            txt_LastnameKana.TabIndex = 20;
             // 
-            // textBox4
+            // txt_FirstnameKana
             // 
-            textBox4.Location = new Point(448, 173);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(152, 27);
-            textBox4.TabIndex = 21;
+            txt_FirstnameKana.Location = new Point(448, 173);
+            txt_FirstnameKana.Name = "txt_FirstnameKana";
+            txt_FirstnameKana.Size = new Size(152, 27);
+            txt_FirstnameKana.TabIndex = 21;
             // 
-            // textBox5
+            // txt_email
             // 
-            textBox5.Location = new Point(164, 222);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(436, 27);
-            textBox5.TabIndex = 22;
+            txt_email.Location = new Point(164, 222);
+            txt_email.Name = "txt_email";
+            txt_email.Size = new Size(436, 27);
+            txt_email.TabIndex = 22;
             // 
-            // textBox6
+            // txt_phonenumber
             // 
-            textBox6.Location = new Point(164, 275);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(436, 27);
-            textBox6.TabIndex = 23;
+            txt_phonenumber.Location = new Point(164, 275);
+            txt_phonenumber.Name = "txt_phonenumber";
+            txt_phonenumber.Size = new Size(436, 27);
+            txt_phonenumber.TabIndex = 23;
             // 
-            // comboBox1
+            // cmb_Department
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(164, 319);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(160, 28);
-            comboBox1.TabIndex = 24;
+            cmb_Department.FormattingEnabled = true;
+            cmb_Department.Location = new Point(164, 319);
+            cmb_Department.Name = "cmb_Department";
+            cmb_Department.Size = new Size(160, 28);
+            cmb_Department.TabIndex = 24;
             // 
-            // comboBox2
+            // cmb_Position
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(164, 364);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(160, 28);
-            comboBox2.TabIndex = 25;
+            cmb_Position.FormattingEnabled = true;
+            cmb_Position.Location = new Point(164, 364);
+            cmb_Position.Name = "cmb_Position";
+            cmb_Position.Size = new Size(160, 28);
+            cmb_Position.TabIndex = 25;
             // 
-            // dateTimePicker1
+            // date_hiredate
             // 
-            dateTimePicker1.Location = new Point(161, 416);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(212, 27);
-            dateTimePicker1.TabIndex = 26;
+            date_hiredate.Location = new Point(161, 416);
+            date_hiredate.Name = "date_hiredate";
+            date_hiredate.Size = new Size(212, 27);
+            date_hiredate.TabIndex = 26;
             // 
-            // comboBox3
+            // cmb_status
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(161, 462);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(160, 28);
-            comboBox3.TabIndex = 27;
+            cmb_status.FormattingEnabled = true;
+            cmb_status.Location = new Point(161, 462);
+            cmb_status.Name = "cmb_status";
+            cmb_status.Size = new Size(160, 28);
+            cmb_status.TabIndex = 27;
+            // 
+            // txt_EmployeeID
+            // 
+            txt_EmployeeID.Location = new Point(164, 75);
+            txt_EmployeeID.Name = "txt_EmployeeID";
+            txt_EmployeeID.Size = new Size(152, 27);
+            txt_EmployeeID.TabIndex = 28;
             // 
             // EmployeeAddForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(671, 622);
-            Controls.Add(comboBox3);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txt_EmployeeID);
+            Controls.Add(cmb_status);
+            Controls.Add(date_hiredate);
+            Controls.Add(cmb_Position);
+            Controls.Add(cmb_Department);
+            Controls.Add(txt_phonenumber);
+            Controls.Add(txt_email);
+            Controls.Add(txt_FirstnameKana);
+            Controls.Add(txt_LastnameKana);
             Controls.Add(label13);
             Controls.Add(label12);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label11);
+            Controls.Add(txt_FirstName);
+            Controls.Add(txt_LastName);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -286,6 +284,7 @@
             Controls.Add(btn_back);
             Name = "EmployeeAddForm";
             Text = "社員情報新規登録フォーム";
+            Load += EmployeeAddForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,18 +302,18 @@
         private Label label8;
         private Label label9;
         private Label label10;
-        private Label label11;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txt_LastName;
+        private TextBox txt_FirstName;
         private Label label12;
         private Label label13;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox3;
+        private TextBox txt_LastnameKana;
+        private TextBox txt_FirstnameKana;
+        private TextBox txt_email;
+        private TextBox txt_phonenumber;
+        private ComboBox cmb_Department;
+        private ComboBox cmb_Position;
+        private DateTimePicker date_hiredate;
+        private ComboBox cmb_status;
+        private TextBox txt_EmployeeID;
     }
 }

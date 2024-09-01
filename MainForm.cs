@@ -45,8 +45,26 @@ namespace 社員情報管理システム
         private void btn_add_Click(object sender, EventArgs e)
         {
             //新規登録フォームを開く
-            EmployeeAddForm employeeAddForm = new EmployeeAddForm();
-            employeeAddForm.Show();
+
+            // 最大の EmployeeID を取得
+            int maxEmployeeID = 0;
+
+            if (dataGridView1.Rows.Count > 0)
+            {
+                var lastRow = dataGridView1.Rows[dataGridView1.Rows.Count - 1];
+                if (lastRow.Cells["EmployeeID"].Value != null)
+                {
+                    maxEmployeeID = Convert.ToInt32(lastRow.Cells["EmployeeID"].Value);
+                }
+            }
+
+            // 新しい EmployeeID を生成
+            int newEmployeeID = maxEmployeeID + 1;
+
+            // 新規登録フォームを開く
+            EmployeeAddForm employeeAddForm = new EmployeeAddForm(newEmployeeID);
+            employeeAddForm.ShowDialog();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,7 +87,7 @@ namespace 社員情報管理システム
 
         }
         //システム起動時にデータを表示する
-        private void MainForm_Load(object sender, EventArgs e)
+        public void MainForm_Load(object sender, EventArgs e)
         {
             {
                 string connectionString = "Host=localhost; Port= 5432; Username = postgres;Password = naojd0921;Database=Kanri";
@@ -96,6 +114,7 @@ namespace 社員情報管理システム
 
                         //DataGritViewのカラム設定を使う=FALSE
                         dataGridView1.AutoGenerateColumns = false;
+                        dataGridView1.AllowUserToAddRows = false;
 
                         //カラム結合
                         // 新しいカラムを追加
@@ -130,6 +149,8 @@ namespace 社員情報管理システム
 
 
                         dataGridView1.DataSource = dataTable;
+
+                      
 
                     }
                 }

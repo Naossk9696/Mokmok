@@ -38,7 +38,7 @@ namespace 社員情報管理システム
 
         private void EmployeeDetailForm_Load(object sender, EventArgs e)
         {
-           // InitializeComponent();
+            // InitializeComponent();
 
 
             //DataGritViewで選択した情報をフォームに表示する
@@ -55,9 +55,9 @@ namespace 社員情報管理システム
             txt_status.Text = Status;
         }
 
+        //メイン画面に戻る
         private void btn_back_Click(object sender, EventArgs e)
         {
-            //メイン画面に戻る
             {
                 //終了前の確認
                 DialogResult result = MessageBox.Show("メイン画面に戻りますか？", "確認",
@@ -81,12 +81,13 @@ namespace 社員情報管理システム
             }
         }
 
+        //社員情報を更新する
         private void btn_update_Click(object sender, EventArgs e)
         {
             //入力した情報でDBを更新する
             //更新前の確認
             {
-                DialogResult result = MessageBox.Show("更新して宜しいでしょうか？", "確認",
+                DialogResult result = MessageBox.Show(txt_Lastname.Text + txt_FirstName.Text + "さんを更新して宜しいでしょうか？", "確認",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
@@ -110,9 +111,35 @@ namespace 社員情報管理システム
                 }
             }
         }
+
+        //社員情報を削除する
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(txt_Lastname.Text +  txt_FirstName.Text + "さんを削除して宜しいでしょうか？", "確認",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question);
+
+            //選択肢
+            if (result == DialogResult.Yes)
+            {
+                //はい
+
+                //DBを更新する
+
+
+                //更新完了
+                MessageBox.Show("削除しました。", "確認");
+                this.Close();
+            }
+
+            else if (result == DialogResult.No)
+            {
+                //いいえ
+                Console.WriteLine("削除をキャンセルしました。");
+            }
+        }
     }
-
-
-
 }
+
+
 

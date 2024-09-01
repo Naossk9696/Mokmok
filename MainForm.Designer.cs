@@ -26,7 +26,7 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             btn_close = new Button();
             btn_add = new Button();
@@ -316,7 +316,7 @@
         private Button button3;
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
         private Button button4;
         private Button btn_detail;
         private Button button6;

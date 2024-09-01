@@ -55,7 +55,7 @@ namespace 社員情報管理システム
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
-            label12 = new Label();
+            txt_EmployeeID = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -250,21 +250,19 @@ namespace 社員情報管理システム
             dateTimePicker1.Size = new Size(225, 27);
             dateTimePicker1.TabIndex = 22;
             // 
-            // label12
+            // txt_EmployeeID
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(129, 38);
-            label12.Name = "label12";
-            label12.Size = new Size(90, 20);
-            label12.TabIndex = 23;
-            label12.Text = "EmployeeID";
+            txt_EmployeeID.Location = new Point(129, 35);
+            txt_EmployeeID.Name = "txt_EmployeeID";
+            txt_EmployeeID.Size = new Size(177, 27);
+            txt_EmployeeID.TabIndex = 23;
             // 
             // EmployeeEditForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(702, 544);
-            Controls.Add(label12);
+            Controls.Add(txt_EmployeeID);
             Controls.Add(dateTimePicker1);
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
@@ -290,6 +288,7 @@ namespace 社員情報管理システム
             Controls.Add(label1);
             Name = "EmployeeEditForm";
             Text = "EmployeeEditForm";
+            Load += EmployeeEditForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,6 +317,6 @@ namespace 社員情報管理システム
         private ComboBox comboBox2;
         private ComboBox comboBox3;
         private DateTimePicker dateTimePicker1;
-        private Label label12;
+        private TextBox txt_EmployeeID;
     }
 }

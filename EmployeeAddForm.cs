@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace 社員情報管理システム
 {
     public partial class EmployeeAddForm : Form
     {
-        public EmployeeAddForm()
+        private int employeeID;
+        public EmployeeAddForm(int newEmployeeID)
         {
             InitializeComponent();
+            employeeID = newEmployeeID;
         }
 
         //mainフォームに戻る
@@ -66,7 +70,25 @@ namespace 社員情報管理システム
             }
         }
 
-        
+        private void EmployeeAddForm_Load(object sender, EventArgs e)
+        {
+
+            // txt_EmployeeID に設定
+            txt_EmployeeID.Text = employeeID.ToString("D6");
+        }
+
+        //txt_EmployeeID.Text = EmployeeID;
+        //txt_LastName.Text = LastName;
+        //txt_FirstName.Text = FirstName;
+        //txt_LastnameKana.Text = LastNameKana;
+        //txt_FirstnameKana.Text = FirstNameKana;
+        //txt_email.Text = Email;
+        //txt_phonenumber.Text = PhoneNumber;
+        //date_hiredate.Text = HireDate;
+        //cmb_Department.SelectedValue = DepartmentName;
+        //cmb_Position.Text = PositionName;
+        //cmb_status.Text = Status;
+
     }
 
 }

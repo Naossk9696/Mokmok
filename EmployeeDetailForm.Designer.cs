@@ -59,6 +59,7 @@ namespace 社員情報管理システム
             btn_back = new Button();
             txt_Employeeid = new TextBox();
             btn_update = new Button();
+            btn_delete = new Button();
             SuspendLayout();
             // 
             // label1
@@ -214,7 +215,7 @@ namespace 社員情報管理システム
             // 
             cmb_position.Location = new Point(151, 323);
             cmb_position.Name = "cmb_position";
-            cmb_position.Size = new Size(151, 27);
+            cmb_position.Size = new Size(151, 28);
             cmb_position.TabIndex = 19;
             // 
             // txt_status
@@ -258,11 +259,22 @@ namespace 社員情報管理システム
             btn_update.UseVisualStyleBackColor = true;
             btn_update.Click += btn_update_Click;
             // 
+            // btn_delete
+            // 
+            btn_delete.Location = new Point(609, 23);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(116, 45);
+            btn_delete.TabIndex = 28;
+            btn_delete.Text = "削除する";
+            btn_delete.UseVisualStyleBackColor = true;
+            btn_delete.Click += btn_delete_Click;
+            // 
             // EmployeeDetailForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(737, 566);
+            Controls.Add(btn_delete);
             Controls.Add(btn_update);
             Controls.Add(txt_Employeeid);
             Controls.Add(btn_back);
@@ -320,6 +332,7 @@ namespace 社員情報管理システム
         private Button btn_back;
         private TextBox txt_Employeeid;
         private Button btn_update;
+        private Button btn_delete;
     }
 
    
