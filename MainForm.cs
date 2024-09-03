@@ -90,6 +90,8 @@ namespace 社員情報管理システム
         public void MainForm_Load(object sender, EventArgs e)
         {
             {
+
+                //DB接続
                 string connectionString = "Host=localhost; Port= 5432; Username = postgres;Password = naojd0921;Database=Kanri";
 
                 using (var connection = new NpgsqlConnection(connectionString))
