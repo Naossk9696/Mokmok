@@ -72,48 +72,64 @@ namespace 社員情報管理システム
             {
                 //はい
 
+                //入力項目必須欄が空白の場合確認する
+
+                if (string.IsNullOrWhiteSpace(lastName) ||
+                   string.IsNullOrWhiteSpace(firstName) ||
+                   string.IsNullOrWhiteSpace(lastNameKana) ||
+                   string.IsNullOrWhiteSpace(firstNameKana) ||
+                   string.IsNullOrWhiteSpace(email) ||
+                   string.IsNullOrWhiteSpace(phoneNumber) ||
+                   string.IsNullOrWhiteSpace(department) ||
+                   string.IsNullOrWhiteSpace(position) ||
+                   string.IsNullOrWhiteSpace(status) ||
+                   string.IsNullOrWhiteSpace(employeeID))
+
+                    //テキストボックスに空欄があった場合メッセージ表示
+                    {
+                        MessageBox.Show("すべての項目を入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                 //DB接続
-                string connectionString = "Host=localhost; Port= 5432; Username = postgres;Password = naojd0921;Database=Kanri";
+                string connectionString = "Host=localhost; Port= 5432; Username = postgres; Password = naojd0921; Database=Kanri";
 
                 using (var connection = new NpgsqlConnection(connectionString))
                 {
-
                     connection.Open();
 
-                    //DBに登録する情報
-                    string sql = "INSERT INTO Employees (EmployeeID,LastName,FirstName,LastnameKana,FirstnameKana, Email,PhoneNumber, Department,Position,HireDate,status)" + 
-                                "VALUES (@EmployeeID, @LastName, @FirstName, @LastnameKana, @FisrtnameKana, @Email, @PhoneNumber, @Department, @Position, @HireDate, @status)" ;
+                    // DBに登録する情報
+                    string sql = "INSERT INTO Employees (EmployeeID, LastName, FirstName, LastnameKana, FirstnameKana, Email, PhoneNumber, Department, Position, HireDate, Status) " +
+                                 "VALUES (@EmployeeID, @LastName, @FirstName, @LastnameKana, @FirstnameKana, @Email, @PhoneNumber, @Department, @Position, @HireDate, @Status)";
 
-                    using (var cmd =  new NpgsqlCommand(sql, connection)) 
+                    using (var cmd = new NpgsqlCommand(sql, connection))
                     {
                         cmd.Parameters.AddWithValue("@EmployeeID", employeeID);
                         cmd.Parameters.AddWithValue("@LastName", lastName);
-                        cmd.Parameters.AddWithValue("@FirstName",firstName);
+                        cmd.Parameters.AddWithValue("@FirstName", firstName);
                         cmd.Parameters.AddWithValue("@LastnameKana", lastNameKana);
                         cmd.Parameters.AddWithValue("@FirstnameKana", firstNameKana);
-                        cmd.Parameters.AddWithValue("@Email",email);
-                        cmd.Parameters.AddWithValue("@PhoneNumber",phoneNumber);
-                        cmd.Parameters.AddWithValue("Department",department);
-                        cmd.Parameters.AddWithValue("@Position",position);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                        cmd.Parameters.AddWithValue("@Department", department);
+                        cmd.Parameters.AddWithValue("@Position", position);
                         cmd.Parameters.AddWithValue("@HireDate", hireDate);
-                        cmd.Parameters.AddWithValue("@Status",status);
-                        
+                        cmd.Parameters.AddWithValue("@Status", status);
 
+                        // データベースにデータを登録
+                        cmd.ExecuteNonQuery();
+                    }
 
-
-
-
-
-                    //入力項目必須欄が空白の場合確認する
-
+                    MessageBox.Show("データが正常に登録されました。", "登録完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                }
             }
-
-            else if (result == DialogResult.No)
+            else
             {
-                //いいえ
+                // いいえ
                 Console.WriteLine("キャンセルしました。");
             }
+
         }
 
         //新規登録フォームを表示
